@@ -18,10 +18,6 @@ jobs:
       GITHUB_SECRET: ${{ secrets.AUTH_GITHUB_SECRET }}
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
       NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
-      NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY }}
-      STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
-      STRIPE_SUBSCRIPTION_PRICE_ID: ${{ secrets.STRIPE_SUBSCRIPTION_PRICE_ID}}
-      STRIPE_WEBHOOK_SECRET_KEY: ${{ secrets.STRIPE_WEBHOOK_SECRET_KEY }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
