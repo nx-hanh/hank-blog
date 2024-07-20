@@ -4,6 +4,7 @@ import { LanguageSwitcher } from './language-switcher';
 
 import { authOptions } from '@/app/api/auth/[...nextauth]/auth-options';
 import { SignInButton } from '@/components/navbar/sign-in-button';
+import { ThemeSwitcher } from '@/components/theme-switcher';
 import { Link } from '@/lib/i18n';
 import * as m from '@/paraglide/messages';
 
@@ -19,6 +20,7 @@ export const Navbar = async () => {
         <div className="flex items-center gap-2">
           {session ? <div>{session?.user?.name}</div> : <SignInButton />}
           <LanguageSwitcher />
+          <ThemeSwitcher />
         </div>
       </div>
     </header>

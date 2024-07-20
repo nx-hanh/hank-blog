@@ -1,7 +1,7 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
   "app_name": "Hank-Blog",
-  "sign_in": "Sign in",
+  "sign_in": "Đăng nhập",
   "meta_title": "Hank-Blog",
   "meta_description": "My personal blog",
   "meta_keyword_nextjs": "Next.js",
@@ -12,5 +12,5 @@
   "meta_keyword_next_auth": "Next-auth",
   "meta_keyword_prisma": "Prisma",
   "github": "Github",
-  "theme_toggle_label": "Toggle theme"
+  "theme_toggle_label": "Chuyển đổi chủ đề"
 }

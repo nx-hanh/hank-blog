@@ -3,10 +3,10 @@ import type { Config } from 'tailwindcss';
 const config = {
   darkMode: ['class'],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    './pages/**/*.{ts,tsx,jsx}',
+    './components/**/*.{ts,tsx,jsx}',
+    './app/**/*.{ts,tsx,jsx}',
+    './src/**/*.{ts,tsx,jsx}',
   ],
   prefix: '',
   theme: {
@@ -71,10 +71,15 @@ const config = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
+        'transform-scale': {
+          '0%': { transform: 'scale(0.1) translate(-10px, -70px)' },
+          '100%': { transform: 'scale(1) translate(-10px, -70px)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'transform-scale': 'transform-scale 0.3s',
       },
     },
   },

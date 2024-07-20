@@ -1,15 +1,5 @@
-import { Inter, JetBrains_Mono } from 'next/font/google';
+import firaSans from '@/assets/font/firaSans';
+import patrickHand from '@/assets/font/patrickHand';
 
-const fontSans = Inter({
-  subsets: ['latin'],
-  variable: '--font-sans',
-  fallback: ['system-ui', 'arial'],
-});
-
-const fontMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-mono',
-  fallback: ['system-ui', 'arial'],
-});
-
-export const fonts = [fontSans.variable, fontMono.variable];
+export const fonts = firaSans.className;
+export const fontsHandWriting = patrickHand.className;
