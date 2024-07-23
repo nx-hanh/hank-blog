@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { Button } from '@/components/ui/button';
+import SignInModel from '@/components/signIn/SignInModel';
 
 interface BottomActionsProps {
   writerDone: boolean;
@@ -17,13 +17,7 @@ const BottomActions: FC<BottomActionsProps> = ({ writerDone }) => {
           </button>
           <p className="mt-4 text-center text-base font-light">
             Want to save your history?
-            <Button
-              type="button"
-              variant={'link'}
-              className="text-lg font-bold tracking-wide"
-            >
-              Sign In
-            </Button>
+            <SignInModel />
           </p>
         </>
       )}

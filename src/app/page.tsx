@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <section
       className="container relative flex h-svh flex-col items-center justify-center
-      bg-gradient-to-br from-white to-gray-100 shadow-lg"
+      shadow-lg"
     >
       {/* top actions */}
       <TopActions writerDone={writerDone} />

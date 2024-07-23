@@ -26,11 +26,15 @@ export const LanguageSwitcher = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="secondary" size="icon">
+        <Button
+          variant="secondary"
+          size="icon"
+          className="border-foreground bg-background size-12 rounded-full border-[3px]"
+        >
           {languageTag().toUpperCase()}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent side="left" align="center" className="mr-2">
         {availableLanguageTags.map((locale) => (
           <DropdownMenuItem
             key={locale}

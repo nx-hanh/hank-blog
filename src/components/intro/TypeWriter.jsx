@@ -27,6 +27,9 @@ const TypeWriter = ({ setWriterDone }) => {
             .typeString(
               '👋 I am <span style="color: #207fd8">Hank</span>, a software developer 👨🏻‍💻.'
             )
+            .callFunction(() => {
+              setWriterDone(true); // For testing sign in button, TODO: remove this line
+            })
             .pauseFor(1500)
             .deleteAll(-10)
             .typeString(
