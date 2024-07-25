@@ -1,6 +1,8 @@
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import type { NextAuthOptions } from 'next-auth';
+import FacebookProvider from 'next-auth/providers/facebook';
 import GitHubProvider from 'next-auth/providers/github';
+import GoogleProvider from 'next-auth/providers/google';
 
 import { env } from '@/env.mjs';
 import prisma from '@/lib/prisma';
@@ -11,6 +13,17 @@ export const authOptions: NextAuthOptions = {
     GitHubProvider({
       clientId: env.GITHUB_ID,
       clientSecret: env.GITHUB_SECRET,
+      allowDangerousEmailAccountLinking: true,
+    }),
+    GoogleProvider({
+      clientId: env.GOOGLE_ID,
+      clientSecret: env.GOOGLE_SECRET,
+      allowDangerousEmailAccountLinking: true,
+    }),
+    FacebookProvider({
+      clientId: env.FACEBOOK_ID,
+      clientSecret: env.FACEBOOK_SECRET,
+      allowDangerousEmailAccountLinking: true,
     }),
   ],
   callbacks: {
@@ -18,14 +31,7 @@ export const authOptions: NextAuthOptions = {
       if (!session.user) return session;
 
       session.user.id = user.id;
-      session.user.isActive = user.isActive;
-
       return session;
-    },
-  },
-  events: {
-    createUser: async ({ user }) => {
-      if (!user.email || !user.name) return;
     },
   },
 };

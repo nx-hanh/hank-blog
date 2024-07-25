@@ -1,16 +1,19 @@
 import React, { FC } from 'react';
 
-import { Link } from '@/lib/i18n';
-
 interface SocialLoginButtonProps {
-  type: 'Google' | 'Facebook' | 'Github';
+  type: string;
   text: string;
+  onClick: () => void;
 }
 
-const SocialLoginButton: FC<SocialLoginButtonProps> = ({ type, text }) => {
+const SocialLoginButton: FC<SocialLoginButtonProps> = ({
+  type,
+  text,
+  onClick,
+}) => {
   return (
-    <Link
-      href="#_"
+    <button
+      onClick={onClick}
       className="group relative overflow-hidden rounded-lg bg-gray-100 px-5 py-3 font-medium text-gray-600 shadow-inner"
     >
       <span className="ease absolute left-0 top-0 size-0 border-t-2 border-gray-600 transition-all duration-200 group-hover:w-full"></span>
@@ -19,7 +22,7 @@ const SocialLoginButton: FC<SocialLoginButtonProps> = ({ type, text }) => {
       <span className="ease absolute bottom-0 left-0 h-0 w-full bg-gray-600 transition-all delay-200 duration-500 group-hover:h-full"></span>
       <span className="absolute inset-0 size-full bg-gray-900 opacity-0 delay-500 duration-500 group-hover:opacity-100"></span>
       <div className="ease relative flex flex-row items-center justify-start gap-2 pl-24 text-lg font-semibold transition-colors delay-200 duration-500 group-hover:text-white ">
-        {type === 'Google' && (
+        {type === 'google' && (
           <svg
             width="32"
             height="32"
@@ -33,7 +36,7 @@ const SocialLoginButton: FC<SocialLoginButtonProps> = ({ type, text }) => {
             />
           </svg>
         )}
-        {type === 'Facebook' && (
+        {type === 'facebook' && (
           <svg
             width="32"
             height="32"
@@ -47,7 +50,7 @@ const SocialLoginButton: FC<SocialLoginButtonProps> = ({ type, text }) => {
             />
           </svg>
         )}
-        {type === 'Github' && (
+        {type === 'github' && (
           <svg
             width="32"
             height="32"
@@ -63,7 +66,7 @@ const SocialLoginButton: FC<SocialLoginButtonProps> = ({ type, text }) => {
         )}
         {text}
       </div>
-    </Link>
+    </button>
   );
 };
 

@@ -5,6 +5,7 @@ import { LanguageProvider } from '@inlang/paraglide-next';
 import type { Metadata } from 'next';
 
 import ActionsFloatButton from '@/components/ActionsFloatButton';
+import AuthProvider from '@/components/AuthProvider';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 import { siteConfig } from '@/lib/constant';
@@ -50,12 +51,14 @@ const RootLayout = ({ children }: PropsWithChildren) => {
   return (
     <LanguageProvider>
       <html lang={languageTag()} suppressHydrationWarning>
-        <body className={cn('min-h-screen font-sans', fonts)}>
-          <ThemeProvider attribute="class">
-            {children}
-            <ActionsFloatButton />
-            <Toaster />
-          </ThemeProvider>
+        <body className={cn('min-h-screen', fonts)}>
+          <AuthProvider>
+            <ThemeProvider attribute="class">
+              {children}
+              <ActionsFloatButton />
+              <Toaster />
+            </ThemeProvider>
+          </AuthProvider>
         </body>
       </html>
     </LanguageProvider>

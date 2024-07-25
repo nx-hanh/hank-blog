@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { ClientSafeProvider, signIn } from 'next-auth/react';
 
 import SocialLoginButton from '@/components/signIn/SocialLoginButton';
 import {
@@ -10,9 +10,11 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 
-interface SignInModelProps {}
+interface SignInModelProps {
+  providers: ClientSafeProvider[];
+}
 
-const SignInModel: FC<SignInModelProps> = () => {
+export default function SignInModel({ providers }: SignInModelProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -30,13 +32,16 @@ const SignInModel: FC<SignInModelProps> = () => {
           </DialogDescription>
         </DialogHeader>
         <div className="flex flex-col gap-4">
-          <SocialLoginButton type="Google" text="Sign in with Google" />
-          <SocialLoginButton type="Facebook" text="Sign in with Facebook" />
-          <SocialLoginButton type="Github" text="Sign in with Github" />
+          {providers.map((provider) => (
+            <SocialLoginButton
+              key={provider.id}
+              type={provider.id}
+              text={`Sign in with ${provider.name}`}
+              onClick={() => signIn(provider.id)}
+            />
+          ))}
         </div>
       </DialogContent>
     </Dialog>
   );
-};
-
-export default SignInModel;
+}
