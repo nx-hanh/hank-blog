@@ -12,23 +12,27 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Separator } from '@/components/ui/separator';
+import { ADMIN_EMAIL } from '@/lib/constant';
 import { Link } from '@/lib/i18n';
 
 interface UserActionsButtonProps {
   imageSrc: string;
   name: string;
   id: string;
+  email: string;
 }
 
 const UserActionsButton: FC<UserActionsButtonProps> = ({
   imageSrc,
   name,
   id,
+  email,
 }) => {
+  const isAmin = email === ADMIN_EMAIL ? true : false;
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <div className="border-foreground bg-background size-12 cursor-pointer rounded-full border-[3px]">
+        <div className="bg-background size-12 cursor-pointer rounded-full border-[3px] border-black dark:border-gray-700">
           <Image
             src={imageSrc}
             alt="User"
@@ -43,6 +47,13 @@ const UserActionsButton: FC<UserActionsButtonProps> = ({
           {name}
           <Separator />
         </DropdownMenuLabel>
+        {isAmin && (
+          <DropdownMenuItem className="cursor-pointer">
+            <Link href="/admin" className="w-full">
+              Admin
+            </Link>
+          </DropdownMenuItem>
+        )}
         <DropdownMenuItem className="cursor-pointer">
           <Link href={`/history/${id}`} className="w-full">
             History

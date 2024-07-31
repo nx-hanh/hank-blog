@@ -1,22 +1,18 @@
 'use client';
-import React, { FC, useEffect, useState } from 'react';
-import { useSession } from 'next-auth/react';
+import React, { FC, useState } from 'react';
 
 import BottomActions from '@/components/intro/BottomActions';
 import TopActions from '@/components/intro/TopActions';
 import TypeWriter from '@/components/intro/TypeWriter';
 
-interface IntroBodyProps {}
+interface IntroBodyProps {
+  isLogin: boolean;
+}
 
-const IntroBody: FC<IntroBodyProps> = () => {
-  const { data } = useSession();
+const IntroBody: FC<IntroBodyProps> = ({ isLogin }) => {
   const [writerDone, setWriterDone] = useState(false);
-  const [isSkip, setIsSkip] = useState(false);
-  useEffect(() => {
-    if (data) {
-      setIsSkip(true);
-    }
-  }, [data]);
+  const [isSkip, setIsSkip] = useState(isLogin);
+
   return (
     <>
       {/* top actions */}

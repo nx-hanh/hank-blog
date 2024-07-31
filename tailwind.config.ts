@@ -81,9 +81,12 @@ const config = {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'transform-scale': 'transform-scale 0.3s',
       },
+      backgroundImage: {
+        'main-pattern': "url('/bg.svg')",
+      },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
 } satisfies Config;
 
 export default config;

@@ -55,3 +55,17 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+model Blog {
+  id          Int     @id @default(autoincrement())
+  title       String
+  description String
+  date        DateTime
+  tags        String[]
+  image       String?
+  content     String?
+  createAt    DateTime
+  updateAt    DateTime
+  published   Boolean @default(false)
+  isDeleted    Boolean @default(false)
+}

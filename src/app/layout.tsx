@@ -50,7 +50,11 @@ export const generateMetadata = (): Metadata => ({
 const RootLayout = ({ children }: PropsWithChildren) => {
   return (
     <LanguageProvider>
-      <html lang={languageTag()} suppressHydrationWarning>
+      <html
+        lang={languageTag()}
+        suppressHydrationWarning
+        data-color-mode="dark"
+      >
         <body className={cn('min-h-screen', fonts)}>
           <AuthProvider>
             <ThemeProvider attribute="class">

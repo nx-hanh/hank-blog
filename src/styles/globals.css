@@ -1,7 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('@radix-ui/colors/tomato-dark.css');
+@import url('@radix-ui/colors/mauve-dark.css');
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -56,4 +57,253 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.my-line-highlight span.token {
+  --tw-bg-opacity: 1;
+  background-color: hsl(207 11.1% 85.9% / var(--tw-bg-opacity));
+}
+
+.prose {
+  min-width: 0;
+}
+
+.prose code {
+  --tw-bg-opacity: 1;
+  background-color: hsl(210 16.7% 97.6% / var(--tw-bg-opacity));
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  --tw-text-opacity: 1;
+  color: hsl(322 75% 46% / var(--tw-text-opacity));
+}
+
+.prose code:after,
+.prose code:before {
+  content: none;
+}
+
+.prose a,
+.prose code:after,
+.prose code:before {
+  --tw-text-opacity: 1;
+  color: hsl(211 100% 43.2% / var(--tw-text-opacity));
+}
+
+.prose a {
+  text-decoration: none;
+}
+
+.prose code[data-lexical-text] {
+  font-family: var(--font-ibm-plex-mono);
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.prose code[data-lexical-text]:after,
+.prose code[data-lexical-text]:before {
+  content: none;
+}
+
+.prose [data-lexical-decorator] > table {
+  table-layout: fixed;
+}
+
+.prose [data-lexical-decorator] > table td {
+  vertical-align: middle;
+}
+
+.prose [data-lexical-decorator] > table > tbody > tr,
+.prose [data-lexical-decorator] > table > tfoot,
+.prose [data-lexical-decorator] > table > thead {
+  border: 0;
+}
+
+.prose [data-lexical-decorator] > table [data-tool-cell] {
+  padding: 1px;
+  border: 0;
+  line-height: 1rem;
+  vertical-align: middle;
+}
+
+.prose [data-lexical-decorator] > table > thead [data-tool-cell]:first-child {
+  vertical-align: middle;
+}
+
+.prose pre[class*='language-'] {
+  overflow-x: auto;
+}
+
+.prose code[class*='language-'],
+.prose pre[class*='language-'] {
+  font-family: var(--font-ibm-plex-mono);
+  font-size: inherit;
+}
+
+.prose pre[class*='language-'] > code {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  display: block;
+}
+
+.prose .cm-content {
+  font-family: var(--font-ibm-plex-mono);
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.prose [data-editor-type='frontmatter'] table {
+  margin: 0;
+  font-size: inherit;
+  width: auto;
+}
+
+.prose [data-editor-type='frontmatter'] table tbody,
+.prose [data-editor-type='frontmatter'] table tfoot,
+.prose [data-editor-type='frontmatter'] table thead,
+.prose [data-editor-type='frontmatter'] table tr {
+  border: 0;
+}
+
+.prose li[role='checkbox'] {
+  text-indent: 1.2rem;
+}
+
+.prose li[role='checkbox']:before {
+  transform: translate(6px, 6px);
+}
+
+.prose li[role='checkbox']:after {
+  transform: translate(6px, 6px) rotate(45deg);
+}
+
+.api-ref-nav > a {
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.api-ref-nav a:before {
+  border-radius: 0.125rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: hsl(206 6% 43.5% / var(--tw-border-opacity));
+  font-family: var(--font-ibm-plex-mono);
+  font-size: 0.75rem;
+  content: ' ';
+  line-height: 1rem;
+  position: relative;
+  display: inline-block;
+  margin-inline-end: 0.5rem;
+  padding: 0 0.15rem;
+}
+
+.api-ref-nav a[href*='types']:before {
+  content: 'T';
+}
+
+.api-ref-nav a[href*='variables']:before {
+  content: 'V';
+}
+
+.api-ref-nav a[href*='functions']:before {
+  content: 'F';
+}
+
+.api-ref-nav a[href*='interfaces']:before {
+  content: 'I';
+}
+
+.api-ref-nav a[href*='classes']:before {
+  content: 'C';
+}
+
+.api-ref-nav > dl > dd > dl {
+  padding-left: 0.5rem;
+}
+
+.api-ref-nav dd dd {
+  margin-bottom: 0.5rem;
+}
+
+.api-ref-nav > dl > dt {
+  font-weight: 500;
+}
+
+.in-page-nav {
+  position: sticky;
+  top: 94px;
+  width: 12rem;
+  --tw-border-opacity: 1;
+  border-left: 2px hsl(206 100% 50% / var(--tw-border-opacity));
+  border-style: dotted;
+  padding-left: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.in-page-nav p {
+  margin-bottom: 0.5rem;
+}
+
+.in-page-nav li ul {
+  padding-left: 0.5rem;
+}
+
+.in-page-nav li > a {
+  margin-bottom: 0.25rem;
+  display: block;
+  --tw-text-opacity: 1;
+  color: hsl(206 6% 43.5% / var(--tw-text-opacity));
+}
+
+.doc-nav a:hover,
+.doc-nav a[data-current='true'] {
+  --tw-text-opacity: 1;
+  color: hsl(211 100% 43.2% / var(--tw-text-opacity));
+}
+
+.doc-nav a[data-current='true'] {
+  cursor: default;
+}
+
+.doc-content .homepage ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.doc-content blockquote {
+  font-style: normal;
+}
+
+.doc-content blockquote p:after,
+.doc-content blockquote p:before {
+  content: '';
+}
+
+h2#classes + table td:first-child,
+h2#classes + table tr:first-child,
+h2#functions + table td:first-child,
+h2#functions + table tr:first-child,
+h2#interfaces + table td:first-child,
+h2#interfaces + table tr:first-child,
+h2#type-aliases + table td:first-child,
+h2#type-aliases + table tr:first-child {
+  width: 50%;
+}
+
+.feature-overview-popover a {
+  --tw-text-opacity: 1;
+  color: hsl(211 100% 43.2% / var(--tw-text-opacity));
+}
+
+.feature-overview-popover a svg {
+  display: inline;
+}
+
+.feature-overview-popover p {
+  margin-bottom: 1rem;
+}
+
+a > code {
+  text-decoration: none;
+  border-bottom: 1px dotted var(--blue9);
 }

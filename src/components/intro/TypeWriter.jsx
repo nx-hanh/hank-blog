@@ -14,10 +14,14 @@ const stringSplitter = (text) => {
 const TypeWriter = ({ isSkip, setWriterDone }) => {
   return (
     <div
-      className={`flex flex-col items-center justify-center text-center text-3xl font-semibold italic ${fontsHandWriting}`}
+      className={`flex flex-col items-center justify-center text-center text-3xl ${fontsHandWriting}`}
     >
       {isSkip ? (
-        <span>{'Thank you for visiting. 🙌'}</span>
+        <span>
+          Thank you for visiting!
+          <br />
+          🙌
+        </span>
       ) : (
         <Typewriter
           options={{
@@ -44,7 +48,7 @@ const TypeWriter = ({ isSkip, setWriterDone }) => {
               )
               .pauseFor(1000)
               .typeString(
-                `<br/>But if you want something specific, there are many platforms that can give you exactly what you're looking for out there.`
+                `<br/>But if you want something specific,<br/>there are many platforms that can give you exactly what you're looking for out there.`
               )
               .callFunction(() => {
                 setWriterDone(true);

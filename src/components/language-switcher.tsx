@@ -29,7 +29,7 @@ export const LanguageSwitcher = () => {
         <Button
           variant="secondary"
           size="icon"
-          className="border-foreground bg-background size-12 rounded-full border-[3px]"
+          className="bg-background size-12 rounded-full border-[3px] border-black dark:border-gray-700"
         >
           {languageTag().toUpperCase()}
         </Button>
