@@ -1,155 +1,125 @@
-/* This is a theme distributed by `starry-night`.
- * It’s based on what GitHub uses on their site.
- * See <https://github.com/wooorm/starry-night> for more info. */
-:root {
-  --color-prettylights-syntax-comment: #8b949e;
-  --color-prettylights-syntax-constant: #79c0ff;
-  --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
-  --color-prettylights-syntax-entity: #d2a8ff;
-  --color-prettylights-syntax-storage-modifier-import: #c9d1d9;
-  --color-prettylights-syntax-entity-tag: #7ee787;
-  --color-prettylights-syntax-keyword: #ff7b72;
-  --color-prettylights-syntax-string: #a5d6ff;
-  --color-prettylights-syntax-variable: #ffa657;
-  --color-prettylights-syntax-brackethighlighter-unmatched: #f85149;
-  --color-prettylights-syntax-brackethighlighter-angle: #8b949e;
-  --color-prettylights-syntax-invalid-illegal-text: #f0f6fc;
-  --color-prettylights-syntax-invalid-illegal-bg: #8e1519;
-  --color-prettylights-syntax-carriage-return-text: #f0f6fc;
-  --color-prettylights-syntax-carriage-return-bg: #b62324;
-  --color-prettylights-syntax-string-regexp: #7ee787;
-  --color-prettylights-syntax-markup-list: #f2cc60;
-  --color-prettylights-syntax-markup-heading: #1f6feb;
-  --color-prettylights-syntax-markup-italic: #c9d1d9;
-  --color-prettylights-syntax-markup-bold: #c9d1d9;
-  --color-prettylights-syntax-markup-deleted-text: #ffdcd7;
-  --color-prettylights-syntax-markup-deleted-bg: #67060c;
-  --color-prettylights-syntax-markup-inserted-text: #aff5b4;
-  --color-prettylights-syntax-markup-inserted-bg: #033a16;
-  --color-prettylights-syntax-markup-changed-text: #ffdfb6;
-  --color-prettylights-syntax-markup-changed-bg: #5a1e02;
-  --color-prettylights-syntax-markup-ignored-text: #c9d1d9;
-  --color-prettylights-syntax-markup-ignored-bg: #1158c7;
-  --color-prettylights-syntax-meta-diff-range: #d2a8ff;
-  --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
+/*!
+  Theme: GitHub Dark
+  Description: Dark theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-dark
+  Current colors taken from GitHub's CSS
+*/
+
+.hljs {
+  color: #c9d1d9;
+  background: #0d1117;
 }
 
-.pl-c {
-  color: var(--color-prettylights-syntax-comment);
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  /* prettylights-syntax-keyword */
+  color: #ff7b72;
 }
 
-.pl-c1,
-.pl-s .pl-v {
-  color: var(--color-prettylights-syntax-constant);
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  /* prettylights-syntax-entity */
+  color: #d2a8ff;
 }
 
-.pl-e,
-.pl-en {
-  color: var(--color-prettylights-syntax-entity);
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  /* prettylights-syntax-constant */
+  color: #79c0ff;
 }
 
-.pl-smi,
-.pl-s .pl-s1 {
-  color: var(--color-prettylights-syntax-storage-modifier-import);
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+  /* prettylights-syntax-string */
+  color: #a5d6ff;
 }
 
-.pl-ent {
-  color: var(--color-prettylights-syntax-entity-tag);
+.hljs-built_in,
+.hljs-symbol {
+  /* prettylights-syntax-variable */
+  color: #ffa657;
 }
 
-.pl-k {
-  color: var(--color-prettylights-syntax-keyword);
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  /* prettylights-syntax-comment */
+  color: #8b949e;
 }
 
-.pl-s,
-.pl-pds,
-.pl-s .pl-pse .pl-s1,
-.pl-sr,
-.pl-sr .pl-cce,
-.pl-sr .pl-sre,
-.pl-sr .pl-sra {
-  color: var(--color-prettylights-syntax-string);
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  /* prettylights-syntax-entity-tag */
+  color: #7ee787;
 }
 
-.pl-v,
-.pl-smw {
-  color: var(--color-prettylights-syntax-variable);
+.hljs-subst {
+  /* prettylights-syntax-storage-modifier-import */
+  color: #c9d1d9;
 }
 
-.pl-bu {
-  color: var(--color-prettylights-syntax-brackethighlighter-unmatched);
-}
-
-.pl-ii {
-  color: var(--color-prettylights-syntax-invalid-illegal-text);
-  background-color: var(--color-prettylights-syntax-invalid-illegal-bg);
-}
-
-.pl-c2 {
-  color: var(--color-prettylights-syntax-carriage-return-text);
-  background-color: var(--color-prettylights-syntax-carriage-return-bg);
-}
-
-.pl-sr .pl-cce {
+.hljs-section {
+  /* prettylights-syntax-markup-heading */
+  color: #1f6feb;
   font-weight: bold;
-  color: var(--color-prettylights-syntax-string-regexp);
 }
 
-.pl-ml {
-  color: var(--color-prettylights-syntax-markup-list);
+.hljs-bullet {
+  /* prettylights-syntax-markup-list */
+  color: #f2cc60;
 }
 
-.pl-mh,
-.pl-mh .pl-en,
-.pl-ms {
-  font-weight: bold;
-  color: var(--color-prettylights-syntax-markup-heading);
-}
-
-.pl-mi {
+.hljs-emphasis {
+  /* prettylights-syntax-markup-italic */
+  color: #c9d1d9;
   font-style: italic;
-  color: var(--color-prettylights-syntax-markup-italic);
 }
 
-.pl-mb {
+.hljs-strong {
+  /* prettylights-syntax-markup-bold */
+  color: #c9d1d9;
   font-weight: bold;
-  color: var(--color-prettylights-syntax-markup-bold);
 }
 
-.pl-md {
-  color: var(--color-prettylights-syntax-markup-deleted-text);
-  background-color: var(--color-prettylights-syntax-markup-deleted-bg);
+.hljs-addition {
+  /* prettylights-syntax-markup-inserted */
+  color: #aff5b4;
+  background-color: #033a16;
 }
 
-.pl-mi1 {
-  color: var(--color-prettylights-syntax-markup-inserted-text);
-  background-color: var(--color-prettylights-syntax-markup-inserted-bg);
+.hljs-deletion {
+  /* prettylights-syntax-markup-deleted */
+  color: #ffdcd7;
+  background-color: #67060c;
 }
 
-.pl-mc {
-  color: var(--color-prettylights-syntax-markup-changed-text);
-  background-color: var(--color-prettylights-syntax-markup-changed-bg);
-}
-
-.pl-mi2 {
-  color: var(--color-prettylights-syntax-markup-ignored-text);
-  background-color: var(--color-prettylights-syntax-markup-ignored-bg);
-}
-
-.pl-mdr {
-  font-weight: bold;
-  color: var(--color-prettylights-syntax-meta-diff-range);
-}
-
-.pl-ba {
-  color: var(--color-prettylights-syntax-brackethighlighter-angle);
-}
-
-.pl-sg {
-  color: var(--color-prettylights-syntax-sublimelinter-gutter-mark);
-}
-
-.pl-corl {
-  text-decoration: underline;
-  color: var(--color-prettylights-syntax-constant-other-reference-link);
+.hljs-char.escape_,
+.hljs-link,
+.hljs-params,
+.hljs-property,
+.hljs-punctuation,
+.hljs-tag {
+  /* purposely ignored */
 }

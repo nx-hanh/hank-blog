@@ -3,7 +3,7 @@ import '@/styles/code.css';
 import { Suspense } from 'react';
 import Image from 'next/image';
 import { compileMDX } from 'next-mdx-remote/rsc';
-import rehypeStarryNight from 'rehype-starry-night';
+import rehypeHighlight from 'rehype-highlight';
 import remarkGfm from 'remark-gfm';
 
 import { getBlog } from '@/actions/blog.actions';
@@ -16,7 +16,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     options: {
       mdxOptions: {
         remarkPlugins: [remarkGfm],
-        rehypePlugins: [rehypeStarryNight],
+        rehypePlugins: [rehypeHighlight],
       },
     },
   });
