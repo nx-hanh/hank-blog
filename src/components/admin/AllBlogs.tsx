@@ -51,7 +51,7 @@ const AllBlogs: FC<AllBlogsProps> = () => {
           {blogs &&
             blogs.length > 0 &&
             blogs.map((blog) => (
-              <article className="w-[300px]" key={blog.id}>
+              <article className="min-h-[355px] w-[300px]" key={blog.id}>
                 <BlogCard blog={blog} handleDelete={handleDelete} />
               </article>
             ))}

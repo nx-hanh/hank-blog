@@ -70,11 +70,9 @@
 
 .prose code {
   --tw-bg-opacity: 1;
-  background-color: hsl(210 16.7% 97.6% / var(--tw-bg-opacity));
   padding-left: 0.25rem;
   padding-right: 0.25rem;
   --tw-text-opacity: 1;
-  color: hsl(322 75% 46% / var(--tw-text-opacity));
 }
 
 .prose code:after,
