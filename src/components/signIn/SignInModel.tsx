@@ -24,7 +24,7 @@ export default function SignInModel({
     <Dialog>
       <DialogTrigger asChild>
         {type === 'icon' ? (
-          <div className="bg-background flex size-12 cursor-pointer items-center justify-center rounded-full border-[3px] border-black pl-1 hover:opacity-80 dark:border-gray-700">
+          <div className="bg-background flex size-12 cursor-pointer items-center justify-center rounded-full border-[3px] border-black pl-1 hover:bg-gray-500/75 hover:opacity-80 dark:border-gray-700 dark:hover:bg-gray-800/75">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="28"

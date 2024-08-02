@@ -46,6 +46,7 @@ model User {
   isActive         Boolean   @default(false)
   accounts         Account[]
   sessions         Session[]
+  blogReadHistories BlogReadHistory[]
 }
 
 model VerificationToken {
@@ -57,15 +58,26 @@ model VerificationToken {
 }
 
 model Blog {
-  id          Int     @id @default(autoincrement())
+  id          String   @id @default(cuid())
   title       String
   description String
   date        DateTime
   tags        String[]
   image       String?
   content     String?
-  createAt    DateTime
-  updateAt    DateTime
-  published   Boolean @default(false)
-  isDeleted    Boolean @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  published   Boolean  @default(false)
+  isDeleted   Boolean  @default(false)
+  blogReadHistories BlogReadHistory[]
+}
+
+model BlogReadHistory {
+  id      String @id @default(cuid())
+  userId  String
+  blogId  String
+  isDone  Boolean @default(true)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  blog Blog @relation(fields: [blogId], references: [id], onDelete: Cascade)
 }

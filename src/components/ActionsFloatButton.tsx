@@ -5,7 +5,8 @@ import { getProviders } from 'next-auth/react';
 
 import { authOptions } from '@/app/api/auth/[...nextauth]/auth-options';
 import imageSrc from '@/assets/images/logo.jpg';
-import { LanguageSwitcher } from '@/components/language-switcher';
+import HomeButton from '@/components/HomeButton';
+// import { LanguageSwitcher } from '@/components/language-switcher';
 import SignInModel from '@/components/signIn/SignInModel';
 import { ThemeSwitcher } from '@/components/theme-switcher';
 import {
@@ -48,8 +49,9 @@ const ActionsFloatButton: FC<ActionsFloatButtonProps> = async () => {
             ) : (
               <SignInModel providers={loginProviders} type="icon" />
             )}
-            <LanguageSwitcher />
-            <ThemeSwitcher className="size-12 rounded-full  border-[3px] border-black dark:border-gray-700" />
+            {/* <LanguageSwitcher /> */}
+            <ThemeSwitcher className="size-12 rounded-full  border-[3px] border-black hover:bg-gray-500/75 dark:border-gray-700 dark:hover:bg-gray-800/75" />
+            <HomeButton />
           </div>
         </PopoverContent>
       </Popover>

@@ -10,7 +10,7 @@ import { getBlog } from '@/actions/blog.actions';
 import defaultImgSrc from '@/assets/images/blog-default.jpg';
 
 export default async function Page({ params }: { params: { id: string } }) {
-  const blog = await getBlog(Number(params.id));
+  const blog = await getBlog(params.id);
   const { content } = await compileMDX({
     source: blog?.content || '# 404 content not found',
     options: {

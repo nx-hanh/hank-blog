@@ -231,7 +231,7 @@ export default function InitializedMDXEditor({
                         <Button
                           type="button"
                           onClick={() => {
-                            handleSave({ blog, isCreate: blog.id === -1 });
+                            handleSave({ blog, isCreate: blog.id === '-1' });
                           }}
                         >
                           Save
@@ -243,7 +243,7 @@ export default function InitializedMDXEditor({
               </ButtonWithTooltip>
               <div
                 className={
-                  blog.id === -1
+                  blog.id === '-1'
                     ? 'pointer-events-none flex size-8 items-center justify-center opacity-50 dark:opacity-75'
                     : 'flex size-8 items-center justify-center'
                 }

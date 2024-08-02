@@ -18,7 +18,7 @@ const BlogEditHeader: FC<BlogEditHeaderProps> = ({ blog }) => {
         <ArrowLeftIcon size={24} />
       </Button>
       <Separator orientation="vertical" className="bg-foreground" />
-      <h1 className="text-2xl font-bold">{blog.title}</h1>
+      <h1 className="text-2xl font-bold">{blog?.title}</h1>
     </div>
   );
 };

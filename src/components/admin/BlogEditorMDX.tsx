@@ -8,7 +8,7 @@ import { createBlog, updateBlog } from '@/actions/blog.actions';
 import { ForwardRefEditor } from '@/components/admin/ForwardRefEditor';
 import { useToast } from '@/components/ui/use-toast';
 const createBlogTemplate: Blog = {
-  id: -1,
+  id: '-1',
   title: `Blog ${new Date().toLocaleDateString()}`,
   description: 'A blog post',
   date: new Date(),

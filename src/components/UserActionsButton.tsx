@@ -32,7 +32,7 @@ const UserActionsButton: FC<UserActionsButtonProps> = ({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <div className="bg-background size-12 cursor-pointer rounded-full border-[3px] border-black dark:border-gray-700">
+        <div className="bg-background size-12 cursor-pointer rounded-full border-[3px] border-black hover:opacity-75 dark:border-gray-700">
           <Image
             src={imageSrc}
             alt="User"
@@ -48,21 +48,21 @@ const UserActionsButton: FC<UserActionsButtonProps> = ({
           <Separator />
         </DropdownMenuLabel>
         {isAmin && (
-          <DropdownMenuItem className="cursor-pointer">
+          <DropdownMenuItem className="cursor-pointer" asChild>
             <Link href="/admin" className="w-full">
               Admin
             </Link>
           </DropdownMenuItem>
         )}
-        <DropdownMenuItem className="cursor-pointer">
+        <DropdownMenuItem className="cursor-pointer" asChild>
           <Link href={`/history/${id}`} className="w-full">
             History
           </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem>
+        <DropdownMenuItem asChild>
           <Button
             variant="ghost"
-            className="h-fit w-full justify-start p-0"
+            className="h-fit w-full cursor-pointer justify-start p-2"
             onClick={() => signOut()}
           >
             Sign out

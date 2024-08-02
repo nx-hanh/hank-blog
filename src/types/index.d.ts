@@ -1,5 +1,5 @@
 declare type Blog = {
-  id: number;
+  id: string;
   title: string;
   description: string;
   date: Date;
@@ -7,8 +7,8 @@ declare type Blog = {
   image: string;
   content: string;
   published: boolean;
-  createAt?: Date;
-  updateAt?: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
   isDelete?: boolean;
 };
 declare type BlogList = Blog[];
