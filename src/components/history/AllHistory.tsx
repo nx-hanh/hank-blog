@@ -1,41 +1,26 @@
 'use client';
 import React, { FC, useEffect, useState } from 'react';
 
-import { deleteBlog, getAllBlogs } from '@/actions/blog.actions';
+import { getHistoryBlogs } from '@/actions/blog.actions';
 import BlogCard from '@/components/BlogCard';
 import { Skeleton } from '@/components/ui/skeleton';
-import { useToast } from '@/components/ui/use-toast';
 import useServerAction from '@/hooks/useServerAction';
 
-interface AllBlogsProps {
-  blogsDB?: Blog[];
+interface AllHistoryProps {
+  userId: string;
 }
 
-const AllBlogs: FC<AllBlogsProps> = () => {
-  const { toast } = useToast();
+const AllHistory: FC<AllHistoryProps> = ({ userId }) => {
+  const [runAction, isPending] = useServerAction(getHistoryBlogs);
   const [blogs, setBlogs] = useState<Blog[]>();
-  const [runAction, isPending] = useServerAction(getAllBlogs);
   useEffect(() => {
     async function fetchBlogs() {
-      const blogsDB = await runAction();
+      const blogsDB = await runAction(userId);
       setBlogs(blogsDB as Blog[]);
     }
     fetchBlogs();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const handleDelete = async (blog: Blog) => {
-    const res = await deleteBlog(blog.id);
-    if (res) {
-      toast({
-        title: 'Blog deleted successfully',
-      });
-      setBlogs(blogs?.filter((b) => b.id !== blog.id));
-    } else {
-      toast({
-        title: 'Failed to delete blog',
-      });
-    }
-  };
   return (
     <section className="flex w-full flex-row flex-wrap justify-evenly gap-2 space-y-5">
       {isPending ? (
@@ -52,11 +37,7 @@ const AllBlogs: FC<AllBlogsProps> = () => {
             blogs.length > 0 &&
             blogs.map((blog) => (
               <article className="min-h-[355px] w-[300px]" key={blog.id}>
-                <BlogCard
-                  blog={blog}
-                  handleDelete={handleDelete}
-                  isAdmin={true}
-                />
+                <BlogCard blog={blog as Blog} />
               </article>
             ))}
           {blogs?.length === 0 && <p>No blogs found</p>}
@@ -66,4 +47,4 @@ const AllBlogs: FC<AllBlogsProps> = () => {
   );
 };
 
-export default AllBlogs;
+export default AllHistory;

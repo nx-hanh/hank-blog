@@ -188,3 +188,17 @@ export const updateReadBlog = async (userId: string, blogId: string) => {
     return false;
   }
 };
+export const getHistoryBlogs = async (userId: string) => {
+  try {
+    const history = await prisma.blogReadHistory.findMany({
+      where: { userId },
+    });
+    const blogIds = history.map((item) => item.blogId);
+    const blogs = await prisma.blog.findMany({
+      where: { id: { in: blogIds } },
+    });
+    return blogs;
+  } catch (error) {
+    console.error(error);
+  }
+};

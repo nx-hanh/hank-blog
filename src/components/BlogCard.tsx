@@ -28,10 +28,15 @@ import {
 
 interface BlogCardProps {
   blog: Blog;
-  handleDelete: (blog: Blog) => void;
+  handleDelete?: (blog: Blog) => void;
+  isAdmin?: boolean;
 }
 
-const BlogCard: FC<BlogCardProps> = ({ blog, handleDelete }) => {
+const BlogCard: FC<BlogCardProps> = ({
+  blog,
+  handleDelete = () => {},
+  isAdmin = false,
+}) => {
   const router = useRouter();
   return (
     <Card>
@@ -49,35 +54,38 @@ const BlogCard: FC<BlogCardProps> = ({ blog, handleDelete }) => {
         />
       </CardContent>
       <CardFooter className="justify-around">
-        <AlertDialog>
-          <AlertDialogTrigger>
-            <Trash2Icon size={16} color="#c71835" />
-          </AlertDialogTrigger>
-          <AlertDialogContent>
-            <AlertDialogHeader>
-              <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-              <AlertDialogDescription>
-                This action cannot be undone. This will permanently delete your
-                blog and remove your data from our servers.
-              </AlertDialogDescription>
-            </AlertDialogHeader>
-            <AlertDialogFooter>
-              <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <AlertDialogAction onClick={() => handleDelete(blog)}>
-                Continue
-              </AlertDialogAction>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialog>
-
-        <Button
-          variant={'secondary'}
-          className="flex items-center justify-center gap-2"
-          onClick={() => router.push(`/admin/blog-edit/${blog.id}`)}
-        >
-          <FilePenLineIcon size={16} />
-          <span>Edit</span>
-        </Button>
+        {isAdmin && (
+          <AlertDialog>
+            <AlertDialogTrigger>
+              <Trash2Icon size={16} color="#c71835" />
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                <AlertDialogDescription>
+                  This action cannot be undone. This will permanently delete
+                  your blog and remove your data from our servers.
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                <AlertDialogAction onClick={() => handleDelete(blog)}>
+                  Continue
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+        )}
+        {isAdmin && (
+          <Button
+            variant={'secondary'}
+            className="flex items-center justify-center gap-2"
+            onClick={() => router.push(`/admin/blog-edit/${blog.id}`)}
+          >
+            <FilePenLineIcon size={16} />
+            <span>Edit</span>
+          </Button>
+        )}
         <Button
           className="flex items-center justify-center gap-2"
           onClick={() => router.push(`/blog/${blog.id}`)}
