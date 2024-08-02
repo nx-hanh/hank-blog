@@ -50,7 +50,7 @@ const ActionsFloatButton: FC<ActionsFloatButtonProps> = async () => {
               <SignInModel providers={loginProviders} type="icon" />
             )}
             {/* <LanguageSwitcher /> */}
-            <ThemeSwitcher className="size-12 rounded-full  border-[3px] border-black hover:bg-gray-500/75 dark:border-gray-700 dark:hover:bg-gray-800/75" />
+            <ThemeSwitcher className="bg-background size-12 rounded-full  border-[3px] border-black hover:bg-gray-500/75 dark:border-gray-700 dark:hover:bg-gray-800/75" />
             <HomeButton />
           </div>
         </PopoverContent>
