@@ -50,6 +50,7 @@ const BlogCard: FC<BlogCardProps> = ({
           alt={blog.title}
           height={100}
           width={300}
+          unoptimized
           className="rounded-md object-cover"
         />
       </CardContent>

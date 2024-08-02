@@ -26,6 +26,7 @@ export default async function Page({ params }: { params: { id: string } }) {
       className={`prose dark:prose-invert container mx-auto max-w-screen-md py-6`}
     >
       <Image
+        unoptimized
         src={imgSrc}
         alt="blog image"
         width={800}
