@@ -155,12 +155,12 @@ const SelectBox = React.forwardRef<HTMLInputElement, SelectBoxProps>(
                 <Cross2Icon className="size-4" />
               </div>
             )}
-            <CommandList>
-              <CommandEmpty>
-                {emptyPlaceholder ?? 'No results found.'}
-              </CommandEmpty>
-              <ScrollArea>
-                {(options || []).map((option) => {
+            <ScrollArea>
+              <CommandList>
+                <CommandEmpty>
+                  {emptyPlaceholder ?? 'No results found.'}
+                </CommandEmpty>
+                {options.map((option) => {
                   const isSelected =
                     Array.isArray(value) && value.includes(option.value);
                   return (
@@ -193,8 +193,8 @@ const SelectBox = React.forwardRef<HTMLInputElement, SelectBoxProps>(
                     </CommandItem>
                   );
                 })}
-              </ScrollArea>
-            </CommandList>
+              </CommandList>
+            </ScrollArea>
           </Command>
         </PopoverContent>
       </Popover>
