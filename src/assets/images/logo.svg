@@ -1,0 +1,21 @@
+<svg width="152" height="152" viewBox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1_2)">
+<circle cx="76" cy="76" r="72" fill="black" stroke="white" stroke-width="8"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M61.7201 59.2502L67.8125 62.1964L60.7268 52.9108L20 38L25.2978 45.8571L32.7808 50.8573L27.0196 48.4464L29.4698 56.6609L33.9729 57.3749L37.3503 64.6072L45.5618 68L61.7201 59.2502ZM41.5919 51.8263L41.1578 54.4733L48.2437 57.3305L50.617 55.1306L54.9955 56.7337L45.3718 61.9449L40.0976 59.7659L36.7985 52.701L37.5022 50.3291L41.5919 51.8263Z" fill="white"/>
+<line x1="15" y1="114" x2="137" y2="114" stroke="#999999" stroke-width="12"/>
+<line x1="74.2426" y1="0.757359" x2="146.744" y2="73.2591" stroke="#999999" stroke-width="12"/>
+<line x1="71.7574" y1="150.259" x2="144.259" y2="77.7574" stroke="#999999" stroke-width="12"/>
+<line x1="1" y1="76" x2="151" y2="76" stroke="#999999" stroke-width="12"/>
+<line x1="76" y1="151" x2="76" y2="1" stroke="#999999" stroke-width="12"/>
+<line x1="102" y1="80" x2="102" y2="124" stroke="#999999" stroke-width="8"/>
+<circle cx="76" cy="76" r="72" stroke="white" stroke-width="8"/>
+<line x1="22.1716" y1="129.172" x2="126.912" y2="24.4315" stroke="white" stroke-width="8"/>
+<line x1="46.7574" y1="158.497" x2="151.497" y2="53.7574" stroke="white" stroke-width="12"/>
+<line x1="63.0503" y1="175.79" x2="167.79" y2="71.0502" stroke="white" stroke-width="14"/>
+</g>
+<defs>
+<clipPath id="clip0_1_2">
+<path d="M0 76C0 34.0264 34.0264 0 76 0V0C117.974 0 152 34.0264 152 76V76C152 117.974 117.974 152 76 152V152C34.0264 152 0 117.974 0 76V76Z" fill="white"/>
+</clipPath>
+</defs>
+</svg>

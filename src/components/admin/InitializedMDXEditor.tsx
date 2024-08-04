@@ -133,13 +133,14 @@ export default function InitializedMDXEditor({
         linkDialogPlugin(),
         imagePlugin({ imageUploadHandler }),
         tablePlugin(),
-        codeBlockPlugin({ defaultCodeBlockLanguage: 'js' }),
+        codeBlockPlugin({ defaultCodeBlockLanguage: 'csharp' }),
         sandpackPlugin({ sandpackConfig: simpleSandpackConfig }),
         codeMirrorPlugin({
           codeBlockLanguages: {
             js: 'JavaScript',
             css: 'CSS',
             ts: 'TypeScript',
+            csharp: 'C#',
           },
         }),
         directivesPlugin({

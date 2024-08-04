@@ -4,7 +4,7 @@ import { getServerSession, User } from 'next-auth';
 import { getProviders } from 'next-auth/react';
 
 import { authOptions } from '@/app/api/auth/[...nextauth]/auth-options';
-import imageSrc from '@/assets/images/logo.jpg';
+import imageSrc from '@/assets/images/logo.svg';
 import HomeButton from '@/components/HomeButton';
 // import { LanguageSwitcher } from '@/components/language-switcher';
 import SignInModel from '@/components/signIn/SignInModel';
