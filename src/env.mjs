@@ -3,7 +3,7 @@ import { z } from 'zod';
 
 export const env = createEnv({
   server: {
-    DATABASE_URL: z.string().min(1),
+    MONGODB_URI: z.string().min(1),
     APP_URL: z.string().url().min(1),
     GOOGLE_SITE_VERIFICATION_ID: z.string().optional(),
     NEXTAUTH_URL: z.string().url().optional(),
@@ -17,7 +17,7 @@ export const env = createEnv({
   },
   client: {},
   runtimeEnv: {
-    DATABASE_URL: process.env.DATABASE_URL,
+    MONGODB_URI: process.env.MONGODB_URI,
     APP_URL: process.env.APP_URL,
     GOOGLE_SITE_VERIFICATION_ID: process.env.GOOGLE_SITE_VERIFICATION_ID,
     GITHUB_ID: process.env.GITHUB_ID,

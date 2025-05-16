@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+// Prisma is now configured for MongoDB
 
 declare global {
   // eslint-disable-next-line no-var
